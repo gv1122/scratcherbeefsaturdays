@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif;
+  color: #1a1a1a;
+  background-color: #2b2b2b;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.03) 0px,
+    rgba(0, 0, 0, 0.03) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+}
+
+.page-wrap {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 16px 12px 48px;
+}
+
+.banner {
+  background: #1a1a1a;
+  border: 4px double #fff;
+  border-radius: 4px;
+  padding: 14px;
+  text-align: center;
+  box-shadow: 4px 4px 0 #000;
+}
+
+.banner h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  color: #fff;
+  text-shadow: 3px 3px 0 #000;
+  letter-spacing: 1px;
+}
+
+.banner p {
+  margin: 6px 0 0;
+  color: #ccc;
+  font-weight: 700;
+}
+
+.marquee-wrap {
+  overflow: hidden;
+  background: #000;
+  margin-top: 10px;
+  border: 2px solid #fff;
+  padding: 4px 0;
+}
+
+.marquee-track {
+  display: inline-block;
+  white-space: nowrap;
+  color: #eee;
+  font-weight: 700;
+  padding-left: 100%;
+  animation: marquee-scroll 16s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.retro-box {
+  background: #fff;
+  border: 3px outset #999;
+  border-radius: 2px;
+  padding: 16px;
+  margin-top: 20px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.retro-box h2 {
+  margin-top: 0;
+  background: #1a1a1a;
+  color: #fff;
+  display: inline-block;
+  padding: 3px 10px;
+  border: 2px solid #fff;
+  font-size: 1.1rem;
+}
+
+.blink {
+  animation: blink 1s steps(1) infinite;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.beef-form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  border: 3px inset #999;
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+.beef-form button,
+.retro-button {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 10px 18px;
+  background: linear-gradient(180deg, #f0f0f0, #ccc);
+  border: 3px outset #eee;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #000;
+}
+
+.beef-form button:active,
+.retro-button:active {
+  border-style: inset;
+}
+
+.beef-form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.error-text {
+  color: #1a1a1a;
+  font-weight: 700;
+  background: #fff;
+  border: 2px dashed #1a1a1a;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+}
+
+.vs-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 14px 0;
+}
+
+.vs-card {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 14px 20px;
+  border: 3px solid #fff;
+  border-radius: 4px;
+  text-align: center;
+  min-width: 140px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.vs-card .label {
+  display: block;
+  font-size: 0.7rem;
+  color: #ccc;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.vs-card .handle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.vs-lightning {
+  font-size: 2rem;
+  color: #1a1a1a;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.footer-note {
+  text-align: center;
+  margin-top: 26px;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* .visitor-counter {
+  display: inline-block;
+  background: #000;
+  color: #eee;
+  font-family: "Courier New", monospace;
+  padding: 3px 8px;
+  border: 2px solid #eee;
+  letter-spacing: 2px;
+  margin-top: 6px;
+} */
