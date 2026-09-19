@@ -14,13 +14,13 @@ export async function POST(req: NextRequest) {
 
     if (!deviceId || typeof deviceId !== "string") {
       return NextResponse.json<SubmitResponse>(
-        { ok: false, error: "Missing device id." },
+        { ok: false, error: "missing device id" },
         { status: 400 }
       );
     }
     if (!rawHandle || typeof rawHandle !== "string") {
       return NextResponse.json<SubmitResponse>(
-        { ok: false, error: "Missing handle." },
+        { ok: false, error: "missing handle" },
         { status: 400 }
       );
     }
@@ -28,13 +28,12 @@ export async function POST(req: NextRequest) {
     const handle = cleanHandle(rawHandle);
     if (handle.length < 1 || handle.length > 30) {
       return NextResponse.json<SubmitResponse>(
-        { ok: false, error: "That doesn't look like a valid handle." },
+        { ok: false, error: "that doesnt look like a valid handle" },
         { status: 400 }
       );
     }
     const handleLower = handle.toLowerCase();
 
-    // Already registered on this device? Return their existing handle (idempotent).
     const { data: existing, error: existingErr } = await supabaseAdmin
       .from("scratchers")
       .select("handle")
@@ -46,7 +45,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json<SubmitResponse>({ ok: true, handle: existing.handle });
     }
 
-    // Handle already claimed by a different device? (case-insensitive exact match)
     const { data: claimed, error: claimedErr } = await supabaseAdmin
       .from("scratchers")
       .select("device_id")
@@ -59,7 +57,7 @@ export async function POST(req: NextRequest) {
         {
           ok: false,
           error:
-            "That handle already has beef registered. Pick a different one or ask a friend who signed you up.",
+            "that handle has already been registered. pick a different one or ask a friend who signed you up",
         },
         { status: 409 }
       );
@@ -70,10 +68,9 @@ export async function POST(req: NextRequest) {
       .insert({ device_id: deviceId, handle });
 
     if (insertErr) {
-      // 23505 = unique_violation (race condition: two requests at once)
       if ((insertErr as { code?: string }).code === "23505") {
         return NextResponse.json<SubmitResponse>(
-          { ok: false, error: "That handle or device just got registered. Try refreshing." },
+          { ok: false, error: "that handle or device just got registered , try refreshing the page" },
           { status: 409 }
         );
       }
@@ -84,7 +81,7 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     console.error(err);
     return NextResponse.json<SubmitResponse>(
-      { ok: false, error: "Something broke. Try again." },
+      { ok: false, error: "something broke :( try again" },
       { status: 500 }
     );
   }
