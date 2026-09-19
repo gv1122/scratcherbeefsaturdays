@@ -88,7 +88,7 @@ export default function Home() {
         <h1>🔥🔥🔥 SCRATCHER vs SCRATCHER 🔥🔥🔥</h1>
         <div className="marquee-wrap">
           <div className="marquee-track">
-            🔥 you die a hero , or you live long enough to become the villain of your worst nightmares 🔥 new matchup every saturday @ 9am 🔥 health departments worst nightmare 🔥 you die a hero , or you live long enough to become the villain of your worst nightmares 🔥 new matchup every saturday @ 9am 🔥 health departments worst nightmare 🔥
+            🔥 worldstar of brooklyn scratchers 🔥 new matchup every saturday @ 9am 🔥 health departments worst nightmare 🔥 worldstar of brooklyn scratchers 🔥 new matchup every saturday @ 9am 🔥 health departments worst nightmare 🔥
           </div>
         </div>
       </header>
@@ -119,7 +119,7 @@ export default function Home() {
                   <span className="label">SCRATCHER</span>
                   <span className="handle">@{match.handle}</span>
                 </div>
-                <span className="vs-lightning">⚡</span>
+                <span className="vs-lightning">vs</span>
                 <div className="vs-card">
                   <span className="label">BEEF</span>
                   <span className="handle">@{match.opponent}</span>
