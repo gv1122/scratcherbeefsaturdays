@@ -100,7 +100,7 @@ export default function Home() {
         {!loading && match?.registered && (
           <div>
             <p>
-              you're signed up as <strong>@{match.handle}</strong>. just wait twinkothy
+              youre signed up as <strong>@{match.handle}</strong>. just must wait now ...
             </p>
 
             {match.opponent === undefined && (
@@ -109,7 +109,7 @@ export default function Home() {
 
             {match.opponent === null && (
               <p>
-                you drew a <strong>bye</strong> this time — no fights for you
+                you drew a <strong>bye</strong> this time — no fight for you
               </p>
             )}
 
